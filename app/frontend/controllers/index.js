@@ -3,7 +3,10 @@
 
 import { Application } from "stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
+import Flatpickr from "stimulus-flatpickr";
+import "flatpickr/dist/themes/material_blue.css";
 
 const application = Application.start();
 const context = require.context("controllers", true, /_controller\.js$/);
 application.load(definitionsFromContext(context));
+application.register("flatpickr", Flatpickr);
