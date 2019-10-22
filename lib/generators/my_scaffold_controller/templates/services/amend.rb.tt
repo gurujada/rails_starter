@@ -1,0 +1,14 @@
+module <%= plural_name.capitalize %>
+  class Amend
+    include Dry::Monads[:result]
+    def call(params)
+      <%= singular_name %> = <%= singular_name.capitalize %>.update(params)
+
+      if <%= singular_name %>.save
+        Success(<%= singular_name %>)
+      else
+        Failure(<%= singular_name %>)
+      end
+    end
+  end
+end

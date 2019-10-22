@@ -1,0 +1,16 @@
+module <%= plural_name.capitalize %>
+  class Add
+    include Dry::Monads[:result]
+    def call(params)
+      <%= singular_name %> = <%= singular_name.capitalize %>.new(params)
+
+      if <%= singular_name %>.save
+        Success(<%= singular_name %>)
+      else
+        Failure(<%= singular_name %>)
+      end
+    end
+  end
+end
+
+
