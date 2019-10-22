@@ -29,6 +29,7 @@ module Gurujada
       g.helper = nil
       g.test_framework = nil
       g.system_tests = nil
+      g.jbuilder = nil
     end
 
     # Settings in config/environments/* take precedence over those specified here.

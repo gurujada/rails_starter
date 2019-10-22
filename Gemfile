@@ -48,3 +48,10 @@ end
 
 
 gem 'bootstrap_form'
+gem 'pagy'
+gem 'ransack'
+gem 'spreadsheet_architect'
+
+gem 'dry-system'
+gem 'dry-monads'
+gem 'dry-matcher'
