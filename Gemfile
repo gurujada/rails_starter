@@ -51,6 +51,7 @@ gem 'bootstrap_form'
 gem 'pagy'
 gem 'ransack'
 gem 'spreadsheet_architect'
+gem "rubyzip", ">= 1.3.0"
 
 gem 'dry-system'
 gem 'dry-monads'
