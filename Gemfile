@@ -51,10 +51,13 @@ gem 'bootstrap_form'
 gem 'geared_pagination'
 gem 'ransack'
 gem 'spreadsheet_architect'
-gem "rubyzip", ">= 1.3.0"
+
 gem 'sidekiq'
 gem 'loaf'
 
 gem 'dry-system'
 gem 'dry-monads'
 gem 'dry-matcher'
+
+gem "rubyzip", ">= 1.3.0"
+gem "loofah", ">= 2.3.1"
