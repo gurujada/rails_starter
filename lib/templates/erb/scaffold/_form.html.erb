@@ -1,4 +1,5 @@
 <%%= bootstrap_form_for(@<%= model_resource_name %>, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |form| %>
+  <%%= render 'shared/validation' %>
 <% attributes.each do |attribute| -%>
   <div class="form-group">
 <% if attribute.reference? -%>

@@ -25,12 +25,12 @@ class MyScaffoldControllerGenerator < Rails::Generators::NamedBase
   end
 
   def editable_attributes
-    attributes || if model_exists?
-                    model_columns_for_attributes.map do |column|
-                      Rails::Generators::GeneratedAttribute.new(column.name.to_s, column.type.to_s)
-                    end
-                  else
-                    []
-                  end
+    attributes ||= if model_exists?
+      model_columns_for_attributes.map do |column|
+        Rails::Generators::GeneratedAttribute.new(column.name.to_s, column.type.to_s)
+      end
+    else
+      []
+    end
   end
 end

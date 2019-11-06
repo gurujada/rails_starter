@@ -511,7 +511,7 @@ Lint/UriRegexp:
   Enabled: true
 
 Lint/UselessAssignment:
-  Enabled: true
+  Enabled: false
 
 Lint/UselessComparison:
   Enabled: true

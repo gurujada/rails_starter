@@ -48,10 +48,12 @@ end
 
 
 gem 'bootstrap_form'
-gem 'pagy'
+gem 'geared_pagination'
 gem 'ransack'
 gem 'spreadsheet_architect'
 gem "rubyzip", ">= 1.3.0"
+gem 'sidekiq'
+gem 'loaf'
 
 gem 'dry-system'
 gem 'dry-monads'

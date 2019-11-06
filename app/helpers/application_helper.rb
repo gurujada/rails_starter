@@ -1,8 +1,10 @@
 module ApplicationHelper
-  include Pagy::Frontend
-
   def page_title
     content_for(:page_title) || Rails.application.class.to_s.split("::").first
+  end
+
+  def sort_link_turbo(attribute, *args)
+    sort_link(attribute, *args.push({}, {data: {turbolinks_action: "replace"}}))
   end
 
   def icon(klass, text = nil)

@@ -1,26 +1,34 @@
 class <%= controller_class_name %>Controller < ApplicationController
+  breadcrumb 'Home', :root_path
   include AppImport["<%= plural_table_name %>.add", "<%= plural_table_name %>.amend"]
   before_action :set_<%= singular_table_name %>, only: %i[ show edit update destroy ]
 
   def new
+    breadcrumb "<%= plural_table_name.capitalize %>", :<%= plural_table_name %>_path
+    breadcrumb "New <%= singular_table_name.titleize %>", "#"
     @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
   end
 
   def index
+    breadcrumb "<%= plural_table_name.capitalize %>", :<%= plural_table_name %>_path
     @search = <%= class_name %>.reverse_chronologically.ransack(params[:q])
 
     respond_to do |format|
-      format.any(:html, :json) { @pagy, @<%= plural_table_name %> = pagy(@search.result) }
+      format.any(:html, :json) { @<%= plural_table_name %> = set_page_and_extract_portion_from @search.result }
       format.csv { render csv: @search.result }
       format.xlsx { render xlsx: @search.result }
     end
   end
 
   def show
+    breadcrumb "<%= plural_table_name.capitalize %>", :<%= plural_table_name %>_path
+    breadcrumb "<%= singular_table_name.titleize %>", "#"
     fresh_when etag: @<%= singular_table_name %>
   end
 
   def edit
+    breadcrumb "<%= plural_table_name.capitalize %>", :<%= plural_table_name %>_path
+    breadcrumb "<%= singular_table_name.titleize %>", "#"
   end
 
   def create
